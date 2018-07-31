@@ -1,20 +1,21 @@
-import entity.FirstLastSymbolMax;
-import entity.Swap;
-import entity.VowelsConsonant;
+import entity.FirstLastSymbolMaxWord;
+import entity.FirstLastWord;
+import entity.LetterCounter;
+
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
-        String txt = new String("В этой группе представлены образцы шаблонов. " +
-                "С их помощью вы можете увидеть, как можно использовать регулярные выражения в ежедневной практике. " +
-                "Однако заметьте, что они не обязательно будут работать в любом языке программирования," +
-                " поскольку каждый из них обладает индивидуальными особенностями и различным уровнем поддержки регулярных выражений.");
-        Swap swap = new Swap();
-        VowelsConsonant vowCon = new VowelsConsonant();
-        FirstLastSymbolMax symbols = new FirstLastSymbolMax();
+    public static void main(String[] args) throws IOException {
+        String txt = new String("Регулярные выражения - образцы шаблонов. " +
+                "С их помощью вы можете увидеть, как можно их использовать в ежедневной практике. " +
+                "Не обязательно будут работать в любом языке программирования.");
+        FirstLastWord swap = new FirstLastWord();
+        LetterCounter vowCon = new LetterCounter();
+        FirstLastSymbolMaxWord symbols = new FirstLastSymbolMaxWord();
 
-        //swap.swapSentence(txt);
-        //vowCon.countVowCons(txt);
-        //symbols.firstLastS();
+        swap.swapSentenceFirstLastWord();
+        //vowCon.countVowelConsonant(txt);
+        //symbols.findFirstLastSymbol('о',txt);
 
     }
     }

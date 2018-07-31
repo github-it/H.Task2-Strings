@@ -3,24 +3,23 @@ package entity;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+public class LetterCounter {
 
-public class VowelsConsonant {
-
-    public void countVowCons(String input) {
+    public void countVowelConsonant(String inputTxt) {
         int countChar = 0;
         int countVow = 0;
         String vowels = "аоэиуыеёюяaeiou";
-        ArrayList<String> arrSent = new ArrayList<>();
-        Matcher matcher = Pattern.compile("([^.!?]+)").matcher(input);{
+        ArrayList<String> sentenceArray = new ArrayList<>();
+        Matcher matcher = Pattern.compile("([^.!?]+)").matcher(inputTxt);{
             while (matcher.find()) {
-                arrSent.add(matcher.group());
+                sentenceArray.add(matcher.group());
                 System.out.println(matcher.group());
             }
-            for (int i = 0; i < arrSent.size(); i++) {
-                for (char symbol : arrSent.get(i).toLowerCase().toCharArray()) {
-                    if (Character.isLetter(symbol)) {
+            for (int i = 0; i < sentenceArray.size(); i++) {
+                for (char currentSymbol : sentenceArray.get(i).toLowerCase().toCharArray()) {
+                    if (Character.isLetter(currentSymbol)) {
                         countChar++;
-                        if (vowels.indexOf(symbol) != -1) {
+                        if (vowels.indexOf(currentSymbol) != -1) {
                             countVow++;
                         }
                     }
